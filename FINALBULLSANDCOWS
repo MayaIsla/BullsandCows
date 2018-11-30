@@ -1,0 +1,569 @@
+# Maya Islambouli MIPS Cows and Bulls project
+# Team 11 (LITTTT) Though I tried my best, I'm sorry -Maya Islambouli
+
+
+
+.data #apply word list and instruction ascii through .data
+
+.align 2 
+hoho: .asciiz "HOHO"
+.align 2 
+snow: .asciiz "SNOW"
+.align 2
+cold: .asciiz "COLD"
+.align 2
+tree1: .asciiz "TREE"
+.align 2
+food: .asciiz "FOOD"
+.align 2
+feel: .asciiz "FEEL"
+.align 2
+pine: .asciiz "PINE"
+.align 2
+sled: .asciiz "SLED"
+.align 2
+deer: .asciiz "DEER"
+.align 2
+rain: .asciiz "RAIN"
+.align 2
+fire1: .asciiz "FIRE"
+.align 2
+baby: .asciiz "BABY"
+.align 2
+star: .asciiz "STAR"
+.align 2
+shoe: .asciiz "SHOE"
+.align 2
+pies: .asciiz "PIES"
+.align 2
+gift: .asciiz "GIFT"
+.align 2
+holy: .asciiz "HOLY"
+.align 2
+hams: .asciiz "HAMS"
+.align 2
+cards: .asciiz "CARDS"
+.align 2
+wrap: .asciiz "WRAP"
+.align 2
+list1: .asciiz "LIST"
+.align 2
+noel: .asciiz "NOEL"
+.align 2
+reds: .asciiz "REDS"
+.align 2
+bell: .asciiz "BELL"
+.align 2
+nick: .asciiz "NICK"
+.align 2
+yule: .asciiz "YULE"
+.align 2
+yams: .asciiz "YAMS"
+.align 2
+doll: .asciiz "DOLL"
+.align 2
+boot: .asciiz "BOOT"
+.align 2
+coal: .asciiz "COAL"
+.align 2
+cook: .asciiz "COOK"
+.align 2
+bake: .asciiz "BAKE"
+.align 2
+give: .asciiz "GIVE"
+.align 2
+gold: .asciiz "GOLD"
+.align 2
+hope: .asciiz "HOPE"
+.align 2
+love: .asciiz "LOVE"
+.align 2
+nice: .asciiz "NICE"
+.align 2
+cone: .asciiz "CONE"
+.align 2
+plum: .asciiz "PLUM"
+.align 2
+sale: .asciiz "SALE"
+.align 2
+fall: .asciiz "FALL"
+.align 2
+sock: .asciiz "SOCK"
+.align 2
+trip: .asciiz "TRIP"
+.align 2
+wish: .asciiz "WISH"
+.align 2
+babe: .asciiz "BABE"
+.align 2
+bows: .asciiz "BOWS"
+.align 2
+days: .asciiz "DAYS"
+.align 2
+bird: .asciiz "BIRD"
+.align 2
+cane: .asciiz "CANE"
+.align 2
+care: .asciiz "CARE"
+.align 2
+kids: .asciiz "KIDS"
+.align 2
+deed: .asciiz "DEED"
+.align 2
+dove: .asciiz "DOVE"
+.align 2
+drum: .asciiz "DRUM"
+.align 2
+fest: .asciiz "FEST"
+.align 2
+hens: .asciiz "HENS"
+.align 2
+glee: .asciiz "GLEE"
+.align 2
+ring: .asciiz "RING"
+.align 2
+king: .asciiz "KING"
+.align 2
+lamb: .asciiz "LAMB"
+.align 2
+lord: .asciiz "LORD"
+.align 2
+mail: .asciiz "MAIL"
+.align 2
+meal: .asciiz "MEAL"
+.align 2
+pole: .asciiz "POLE"
+.align 2
+oven: .asciiz "OVEN"
+.align 2
+nuts: .asciiz "NUTS"
+.align 2
+oxen: .asciiz "OXEN"
+.align 2
+play: .asciiz "PLAY"
+.align 2
+pack: .asciiz "PACK"
+.align 2
+rest: .asciiz "REST"
+.align 2
+sack: .asciiz "SACK"
+.align 2
+shop: .asciiz "SHOP"
+.align 2
+seal: .asciiz "SEAL"
+.align 2
+song: .asciiz "SONG"
+.align 2
+bear: .asciiz "BEAR"
+.align 2
+wine: .asciiz "WINE"
+.align 2
+cozy: .asciiz "COZY"
+.align 2
+dear: .asciiz "DEAR"
+.align 2
+full: .asciiz "FULL"
+.align 2
+mint: .asciiz "MINT"
+.align 2
+good: .asciiz "GOOD"
+.align 2
+kind: .asciiz "KIND"
+.align 2
+ugly: .asciiz "UGLY"
+.align 2
+warm: .asciiz "WARM"
+.align 2
+life: .asciiz "LIFE"
+.align 2
+soft: .asciiz "SOFT"
+.align 2
+wise: .asciiz "WISE"
+.align 2
+cool: .asciiz "COOL"
+.align 2
+harp: .asciiz "HARP"
+.align 2
+hymn: .asciiz "HYMN"
+.align 2
+mass: .asciiz "MASS"
+.align 2
+halo: .asciiz "HALO"
+.align 2
+eves: .asciiz "EVES"
+.align 2
+year: .asciiz "YEAR"
+.align 2
+jack: .asciiz "JACK"
+.align 2
+zeal: .asciiz "ZEAL"
+.align 2
+tune: .asciiz "TUNE"	
+
+# create a set array, and set a number to address $t0 
+# Generate an offset 0-99 inclusidvely, 1st word would be the 0th offset 
+
+.data
+INTRO1: .asciiz "Welcome to Cows and Bulls!\n"
+INTRO2: .asciiz "By Maya Islambouli, Team LITTT\n\n"
+PROMPT: .asciiz "Please enter your choice:"
+START1: .asciiz "\nPlease choose one of the items please:\n"
+START2: .asciiz "[1] Start new game\n"
+START3: .asciiz "[2] Exit Game\n"
+INSTRUCT0: .asciiz "Please enter a four letter word that accustoms to Christmas!:\n"
+INSTRUCT1: .asciiz "Valid letters are A-Z\n"
+ERROR1: .asciiz "That was not a four-letter word."
+ERROR2: .asciiz "Word is not in list."
+ERROR3: .asciiz "You already guessed this word."
+ERROR4: .asciiz "\nThat is not one of the menu selections.\n"
+ERROR5: .asciiz "\nInvalid word.\n"
+CHAR: .asciiz "\nYou cannot use this character\n"
+JUMP: .asciiz "\n"
+STRING: .asciiz "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+GUESS: .space 64
+GUESSSPACE: .space 64
+ANSWERSPACE: .space 64
+REMAINING0: .asciiz "\nYour guess has "
+REMAINING1: .asciiz " has "
+COW: .asciiz " Cow\n"
+COWS: .asciiz " Cows\n"
+BULL: .asciiz " Bull and "
+BULLS: .asciiz " Bulls and "
+WINRAR: .asciiz "\nYOU WIN!\n"
+
+.text
+MAIN:
+la $t0, INTRO1 #Shows Welcome statement
+la $t9, JUMP #jumps to ra register, for immediate response when entering a number
+li $v0, 4 #show input
+add $a0, $t0, $0	
+syscall	
+	
+la $t0, INTRO2 #show menu
+add $a0, $t0, $0	
+syscall
+
+jal GENERATOR #jumps to word generator
+jal VIEW #jumps to menu
+
+ERRORSOUND:
+li $v0, 33	
+li $a0, 40	#Pitch
+li $a1, 1000	
+li $a2, 56	
+li $a3, 127	
+syscall
+	
+LOOP1:
+li $v0, 4 #allocates menu to loop every attempt
+la $t0, INSTRUCT0 #shows menu
+add $a0, $t0, $0 #input to loop
+syscall #input
+
+la $t0, INSTRUCT1 #shows instructions
+add $a0, $t0, $0 #allocates instructions after first selection of the menu
+syscall #print instructions
+
+li $v0, 8
+la $a0, GUESS #gives space to user for guessing
+li $a1, 64
+syscall		
+	
+la $t0, GUESS #second guess space loop
+li $v0, 4		
+add $a0, $t0, $0 #initiate loop
+syscall 
+	
+#error checking
+la $t0, GUESS	
+lb $t1, ($t0) #setting first letter of word to $t1
+lb $t2, 1($t0) #setting second letter of word to $t2
+lb $t3, 2($t0) #setting third letter of word to $t3
+lb $t4, 3($t0) #setting fourth letter of word to $t4
+# Converting to ASCII, in order for MIPS 
+# to understand letters given
+# 65- 122 is a-z and toupper characters is 97-122 for A-Z		
+addi $t5, $0, 65
+blt $t1, $t5, UIERROR
+addi $t5, $0, 122
+ble $t1, $t5, LOOP2
+addi $t5, $0, 97
+blt $t1, $t5, UIERROR
+addi $t5, $0, 90
+ble $t1, $t5, ERRORCHECK
+j UIERROR
+
+ERRORCHECK:
+sub $t1, $t1, 32 #a check for any errors given on first letter
+
+LOOPCHECK:
+sub $t2, $t2, 32 #checks to see if errors happened so game will loop again
+
+LOOP2:
+addi $t5, $0, 65 #input ascii to gameloop for three tries
+blt $t2, $t5, UIERROR
+addi $t5, $0, 90
+ble $t2, $t5, LOOP3
+addi $t5, $0, 97
+blt $t2, $t5, UIERROR
+addi $t5, $0, 122
+ble $t2, $t5, LOOPCHECK
+j UIERROR
+
+LOOP3:
+addi $t5, $0, 65 #input ascii 
+blt $t3, $t5, UIERROR
+addi $t5, $0, 90
+ble $t3, $t5, LOOP4
+addi $t5, $0, 97
+blt $t3, $t5, UIERROR
+addi $t5, $0, 122
+ble $t3, $t5, LOOPCHECK2
+j UIERROR
+
+
+LOOP4:
+addi $t5, $0, 65 #connotates with error between ascii
+blt $t4, $t5, UIERROR
+addi $t5, $0, 90
+ble $t4, $t5, GAMELOOP
+addi $t5, $0, 97
+blt $t4, $t5, UIERROR
+addi $t5, $0, 122
+ble $t4, $t5, LOOPCHECK3
+j UIERROR
+
+LOOPCHECK2:
+sub $t3, $t3, 32 #checks for error between loops
+
+LOOPCHECK3:
+sub $t4, $t4, 32
+
+GAMELOOP:
+beq $t1, $t2, WORDERROR #loop for error checking
+beq $t1, $t3, WORDERROR
+beq $t1, $t4, WORDERROR
+beq $t2, $t3, WORDERROR
+beq $t2, $t4, WORDERROR
+beq $t3, $t4, WORDERROR
+#end error checking
+		
+la $t0, GUESS
+sb $t1, ($t0) #setting 0th bit to s1
+sb $t2, 1($t0) #setting 1st bit to s2
+sb $t3, 2($t0) #setting 2nd bit to s3
+sb $t4, 3($t0) #setting 3rd bit to s4
+	
+li $v0, 4 #print string
+add $a0, $t0, $0
+syscall
+		
+add $s7, $0, $0 #print score for bulls and cows
+add $s6, $0, $0
+beq $t1, $s1, SCOREBULL
+beq $t1, $s2, SCORECOW
+beq $t1, $s3, SCORECOW
+beq $t1, $s4, SCORECOW
+j SCORE
+
+
+SCOREBULL:
+addi $s7, $s7, 1 #Calculate score with bulls instead of giving a hex result 
+j SCORE
+
+SCORECOW:
+addi $s6, $s6, 1 #calculate score with cows instead of giving hex result
+j SCORE
+
+SCORE:
+beq $t2, $s2, SCOREBULL2 #shows score for bull2
+beq $t2, $s1, SCORECOW2
+beq $t2, $s3, SCORECOW2
+beq $t2, $s4, SCORECOW2
+j SCORE2
+
+SCOREBULL2:
+addi $s7, $s7, 1
+j SCORE2
+
+SCORECOW2:
+addi $s6, $s6, 1
+j SCORE2
+
+SCORE2:	
+beq $t3, $s3, SCOREBULL3 #converts hex to bulls and cows
+beq $t3, $s1, SCORECOW3
+beq $t3, $s2, SCORECOW3
+beq $t3, $s4, SCORECOW3
+j SCORE3
+
+SCOREBULL3:
+addi $s7, $s7, 1
+j SCORE3
+
+SCORECOW3:
+addi $s6, $s6, 1
+j SCORE3
+SCORE3:	
+beq $t4, $s4, SCOREBULL4
+beq $t4, $s1, SCORECOW4
+beq $t4, $s2, SCORECOW4
+beq $t4, $s3, SCORECOW4
+j WINCONFIRM
+
+SCOREBULL4:
+addi $s7, $s7, 1 #if (bulls = 4) -> YOU WIN!
+j WINCONFIRM
+
+SCORECOW4:
+addi $s6, $s6, 1
+j WINCONFIRM
+
+WINCONFIRM: #if amount of correct letters are showcased, show winning 
+addi $t1, $0, 1  #message
+li $v0, 4
+la $t0, REMAINING1
+add $a0, $t0, $0
+syscall
+
+li $v0, 1 #print winning (YOUWIN ) score
+add $a0, $s7, $0
+syscall
+
+li $v0, 4 #print youwin message 
+beq $t1, $s7, CONFIRMBULL
+la $t0, BULLS
+j CONFIRMCOW
+	
+CONFIRMBULL: #print bull amount
+la $t0, BULL
+
+CONFIRMCOW: #print cow amount
+add $a0, $t0, $0
+syscall
+
+li $v0, 1
+add $a0, $s6, $0
+syscall
+
+li $v0, 4 #view total score and winner message
+beq $t1, $s6, CONFIRMCOW
+la $t0, COWS
+j VIEWSCORE
+
+CONFIRMCOW2:
+	la $t0, COW
+VIEWSCORE:
+add $a0, $t0, $0
+syscall 
+
+add $t1, $0, 4
+beq $s7, $t1, WINNER
+j LOOP1
+
+	
+li $v0, 10 #exits loop
+syscall
+	
+WINNER:
+li $v0, 4
+la $t0, WINRAR
+add $a0, $t0, $0
+syscall
+j VIEW
+	
+UIERROR: #error from user input 
+li $v0, 4 #either from typing in two of the same letters or numbers
+la $t0, CHAR
+add $a0, $t0, $0
+syscall
+		
+j LOOP1
+j ERRORSOUND #jumps to error sound (BUZZING)
+
+WORDERROR: #word not in dicitonary error
+li $v0, 4
+la $t0, ERROR5
+add $a0, $t0, $0
+syscall
+
+j LOOP1 
+j ERRORSOUND # buzzer sound effect
+
+VIEW: #showcases whole menu
+li $v0, 4
+la $t0, START1
+add $a0, $t0, $0
+syscall
+
+la $t0, START2 #menu item 2 
+add $a0, $t0, $0
+syscall
+
+la $t0, START3 #shows whole menu 
+add $a0, $t0, $0
+syscall
+
+la $t0, PROMPT #showcases instructions
+add $a0, $t0, $0
+syscall
+
+li $v0, 8 #guessing/Answer space
+la $a0, GUESS
+li $a1, 64
+syscall			
+
+lb $t1, ($a0)		
+	
+addi $t0, $0, 49	
+beq $t1, $t0, LOOP1  
+addi $t0, $0, 50	
+addi $t0, $0, 51	
+bne $t1, $t0, ERROR4	#prompts to go back to main menu
+				
+li $v0, 10		
+syscall
+	
+CATCHERROR: #if incorrect number is typed in menu, it goes straight to main menu loop
+li $v0, 4
+la $t0, ERROR4
+add $a0, $t0, $0
+syscall
+	
+j VIEW
+
+	
+	
+GENERATOR:
+la $s0, STRING #Loads all possible ASCII values
+li $t1, 3 #counter for loop3
+
+GAMEMAIN:
+li $v0, 42 #random int syscall
+li $a1, 15 #upper bound for the random int to allow 0-15
+syscall #get random number
+
+add $t2, $s0, $a0 #Add random number to the address of the base string
+lb $t4, ($t2) #load the byte at that random part of the string
+la $t5, GUESSSPACE #get address of answer
+add $t5, $t1, $t5 #add counter offset to address of answer
+sb $t4, ($t5) #Store the chosen character at that part of the answer string
+sub $t1, $t1, 1 #decrement counter
+bne $t1, -1, GAMEMAIN #if $t1 != 0, go back through loop	
+	
+la $t0, GUESSSPACE #error checking
+lb $s1, ($t0) #set 1st letter from the list to s1
+lb $s2, 1($t0) #set 2nd letter from the list to s2
+lb $s3, 2($t0) #set 3rd letter from the list to s3
+lb $s4, 3($t0) #set 4th letter from the list to s4
+		
+beq $s1, $s2, GENERATOR #load 1st letter back to randomly generated word
+beq $s1, $s3, GENERATOR #load 1st letter back to randomly generated word and move to $s3
+beq $s1, $s4, GENERATOR #load 2nd letter back to randomly generated word
+beq $s2, $s3, GENERATOR #load 2nd letter back to randomly generated word move to $s2
+beq $s2, $s4, GENERATOR #load 3rd letter back to randomly generated word
+beq $s3, $s4, GENERATOR #load 3rd letter back to randomly generated word move to $s3
+
+#end error checking
+
+jr $ra #jump back to caller
